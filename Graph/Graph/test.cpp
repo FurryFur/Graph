@@ -105,7 +105,9 @@ TEST_CASE("Depth First Search")
 		// TODO: Test that changing the order of link creation still 
 		// results in matching traversals for all types of graphs
 
-		// TODO: Test that running the traversal again results in the same result
+		// Test that running the traversal again results in the same result
+		vecVertexList = pGraph->DepthFirstTraversal(0);
+		REQUIRE(vecVertexList == vecExpectedVertexList);
 
 		delete pGraph;
 	}
@@ -161,7 +163,9 @@ TEST_CASE("Breadth First Search")
 		// TODO: Test that changing the order of link creation still 
 		// results in matching traversals for all types of graphs
 
-		// TODO: Test that running the traversal again results in the same result
+		// Test that running the traversal again results in the same result
+		vecVertexList = pGraph->BreadthFirstTraversal(0);
+		REQUIRE(vecVertexList == vecExpectedVertexList);
 
 		delete pGraph;
 	}

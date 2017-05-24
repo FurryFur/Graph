@@ -1,6 +1,6 @@
 #pragma once
 #include "Graph.h"
-class CMatrixGraph : public IGraph
+class CMatrixGraph : public ABGraph
 {
 public:
 	CMatrixGraph();
@@ -8,8 +8,8 @@ public:
 
 	// Inherited via IGraph
 	virtual void AddVertex() override;
-	virtual void CreateLink(size_t _iVertFrom, size_t _iVertTo) override;
-	virtual std::vector<size_t> GetAdjacent(size_t _iVertFrom) const override;
+	virtual void CreateLink(size_t _szVertFrom, size_t _szVertTo) override;
+	virtual std::vector<size_t> GetAdjacent(size_t _szVertFrom) const override;
 	virtual size_t GetSize() const override;
 
 private:

@@ -23,25 +23,25 @@ void CMatrixGraph::AddVertex()
 	}
 }
 
-void CMatrixGraph::CreateLink(size_t _iVertFrom, size_t _iVertTo)
+void CMatrixGraph::CreateLink(size_t _szVertFrom, size_t _szVertTo)
 {
-	m_matAdjcencies.at(_iVertFrom).at(_iVertTo) = true;
+	m_matAdjcencies.at(_szVertFrom).at(_szVertTo) = true;
 }
 
-std::vector<size_t> CMatrixGraph::GetAdjacent(size_t _iVertFrom) const
+std::vector<size_t> CMatrixGraph::GetAdjacent(size_t _szVertFrom) const
 {
-	std::vector<size_t> vecszResult;
+	std::vector<size_t> vecAdjacent;
 
-	std::vector<bool> vecAdjRow = m_matAdjcencies.at(_iVertFrom);
+	std::vector<bool> vecAdjRow = m_matAdjcencies.at(_szVertFrom);
 	for (size_t szVert = 0; szVert < vecAdjRow.size(); ++szVert)
 	{
 		if (vecAdjRow[szVert])
 		{
-			vecszResult.push_back(szVert);
+			vecAdjacent.push_back(szVert);
 		}
 	}
 
-	return vecszResult;
+	return vecAdjacent;
 }
 
 size_t CMatrixGraph::GetSize() const
